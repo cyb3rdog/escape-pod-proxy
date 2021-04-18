@@ -15,12 +15,11 @@ This section describes how to build the escapepod
 | CYB3RVECTOR_PROXY_CLIENT_PORT | 8089 | the TCP port the cybervector-proxy connects to escape-pod |
 | CYB3RVECTOR_PROXY_CLIENT_INSECURE | true | Insecure TLS-free GRPC communication |
 | CYB3RVECTOR_PROXY_CLIENT_CLIENT_AUTHENTICATION | NoClientCert | Insecure TLS-free GRPC communication |
-|--|--|--|
 | CYB3RVECTOR_PROXY_SERVER_PORT | 8090 | the TCP port the cybervector-proxy publishes events to clients |
 | CYB3RVECTOR_PROXY_SERVER_INSECURE | true | Insecure TLS-free GRPC communication |
 | CYB3RVECTOR_PROXY_SERVER_CLIENT_AUTHENTICATION | NoClientCert | Insecure TLS-free GRPC communication |
 
-2. Build the ``cybervector-proxy``` service binary file
+2. Build the ```cybervector-proxy``` service binary file
 
 - Linux: ```$ make build```
 - Windows: ```build.cmd```
