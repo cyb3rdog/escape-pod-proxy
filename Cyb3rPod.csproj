@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Authors>cyb3rdog</Authors>
+    <Product>Cyb3rPod Extension for Cyb3rVector</Product>
+    <Description>NET Extension for the Anki/DDL Vector EscapePod</Description>
+    <Copyright>Copyright (c) 2021 Vaclav Macha. All rights reserved.</Copyright>
+    <PackageTags>Anki,DDL,Vector,EscapePod,Cyb3rPod</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/cyb3rdog/Cyb3rPod</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/cyb3rdog/Cyb3rPod</PackageProjectUrl>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageId>PHACT.Cyb3rVector.Cyb3rPod</PackageId>
+    <Title>DDL Vector EscapePod</Title>
+    <PackageIconUrl>https://www.weekendrobot.com/images/ankivectoricon.png</PackageIconUrl>
+    <PackageIcon>AnkiVectorIcon.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <OutputType>Library</OutputType>
+    <Company>PHACT</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="AnkiVectorIcon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="grpc_csharp_plugin.exe" />
+    <None Remove="protoc.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Api.CommonProtos" Version="2.2.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.15.8" />
+    <PackageReference Include="Grpc" Version="2.37.0" />
+    <PackageReference Include="Grpc.Core" Version="2.37.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Zeroconf" Version="3.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="proto\" />
+  </ItemGroup>
+
+</Project>
