@@ -15,6 +15,7 @@ import (
 	"github.com/digital-dream-labs/hugh/grpc/interceptors/log"
 	"github.com/digital-dream-labs/hugh/grpc/server"
 
+	interfaces "github.com/cyb3rdog/escape-pod-proxy/proxy/pkg"
 	logger "github.com/digital-dream-labs/hugh/log"
 )
 
@@ -22,7 +23,7 @@ import (
 type ProxyClient struct {
 	podextension.UnimplementedPodExtensionServer
 	server *server.Server
-	proxy  ProxyTarget
+	proxy  interfaces.ProxyTarget
 }
 
 // New returns a populated ProxyClient struct

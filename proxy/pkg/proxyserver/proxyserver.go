@@ -16,6 +16,7 @@ import (
 	"github.com/digital-dream-labs/hugh/grpc/server"
 
 	"github.com/cyb3rdog/escape-pod-proxy/proto/lang/go/cybervector"
+	interfaces "github.com/cyb3rdog/escape-pod-proxy/proxy/pkg"
 
 	logger "github.com/digital-dream-labs/hugh/log"
 )
@@ -23,6 +24,7 @@ import (
 // ProxyServer is the configuration struct
 type ProxyServer struct {
 	cybervector.UnimplementedCyberVectorProxyServiceServer
+	factory     interfaces.IntentFactory
 	server      *server.Server
 	subscribers map[string]cybervector.CyberVectorProxyService_SubscribeServer
 }
@@ -59,6 +61,7 @@ func New(opts ...Option) (*ProxyServer, error) {
 
 	proxy := ProxyServer{
 		server:      srv,
+		factory:     cfg.factory,
 		subscribers: make(map[string]cybervector.CyberVectorProxyService_SubscribeServer),
 	}
 

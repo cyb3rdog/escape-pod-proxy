@@ -20,6 +20,9 @@ const _ = grpc.SupportPackageIsVersion7
 type CyberVectorProxyServiceClient interface {
 	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (CyberVectorProxyService_SubscribeClient, error)
 	UnSubscribe(ctx context.Context, in *UnsubscribeRequest, opts ...grpc.CallOption) (*ProxyMessaage, error)
+	InsertIntent(ctx context.Context, in *InsertIntentRequest, opts ...grpc.CallOption) (*InsertIntentResponse, error)
+	SelectIntents(ctx context.Context, in *SelectIntentRequest, opts ...grpc.CallOption) (*SelectIntentResponse, error)
+	DeleteIntent(ctx context.Context, in *DeleteIntentRequest, opts ...grpc.CallOption) (*DeleteIntentResponse, error)
 }
 
 type cyberVectorProxyServiceClient struct {
@@ -71,12 +74,42 @@ func (c *cyberVectorProxyServiceClient) UnSubscribe(ctx context.Context, in *Uns
 	return out, nil
 }
 
+func (c *cyberVectorProxyServiceClient) InsertIntent(ctx context.Context, in *InsertIntentRequest, opts ...grpc.CallOption) (*InsertIntentResponse, error) {
+	out := new(InsertIntentResponse)
+	err := c.cc.Invoke(ctx, "/cybervector.CyberVectorProxyService/InsertIntent", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cyberVectorProxyServiceClient) SelectIntents(ctx context.Context, in *SelectIntentRequest, opts ...grpc.CallOption) (*SelectIntentResponse, error) {
+	out := new(SelectIntentResponse)
+	err := c.cc.Invoke(ctx, "/cybervector.CyberVectorProxyService/SelectIntents", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cyberVectorProxyServiceClient) DeleteIntent(ctx context.Context, in *DeleteIntentRequest, opts ...grpc.CallOption) (*DeleteIntentResponse, error) {
+	out := new(DeleteIntentResponse)
+	err := c.cc.Invoke(ctx, "/cybervector.CyberVectorProxyService/DeleteIntent", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CyberVectorProxyServiceServer is the server API for CyberVectorProxyService service.
 // All implementations must embed UnimplementedCyberVectorProxyServiceServer
 // for forward compatibility
 type CyberVectorProxyServiceServer interface {
 	Subscribe(*SubscribeRequest, CyberVectorProxyService_SubscribeServer) error
 	UnSubscribe(context.Context, *UnsubscribeRequest) (*ProxyMessaage, error)
+	InsertIntent(context.Context, *InsertIntentRequest) (*InsertIntentResponse, error)
+	SelectIntents(context.Context, *SelectIntentRequest) (*SelectIntentResponse, error)
+	DeleteIntent(context.Context, *DeleteIntentRequest) (*DeleteIntentResponse, error)
 	mustEmbedUnimplementedCyberVectorProxyServiceServer()
 }
 
@@ -89,6 +122,15 @@ func (UnimplementedCyberVectorProxyServiceServer) Subscribe(*SubscribeRequest, C
 }
 func (UnimplementedCyberVectorProxyServiceServer) UnSubscribe(context.Context, *UnsubscribeRequest) (*ProxyMessaage, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnSubscribe not implemented")
+}
+func (UnimplementedCyberVectorProxyServiceServer) InsertIntent(context.Context, *InsertIntentRequest) (*InsertIntentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InsertIntent not implemented")
+}
+func (UnimplementedCyberVectorProxyServiceServer) SelectIntents(context.Context, *SelectIntentRequest) (*SelectIntentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SelectIntents not implemented")
+}
+func (UnimplementedCyberVectorProxyServiceServer) DeleteIntent(context.Context, *DeleteIntentRequest) (*DeleteIntentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteIntent not implemented")
 }
 func (UnimplementedCyberVectorProxyServiceServer) mustEmbedUnimplementedCyberVectorProxyServiceServer() {
 }
@@ -143,6 +185,60 @@ func _CyberVectorProxyService_UnSubscribe_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CyberVectorProxyService_InsertIntent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InsertIntentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CyberVectorProxyServiceServer).InsertIntent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cybervector.CyberVectorProxyService/InsertIntent",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CyberVectorProxyServiceServer).InsertIntent(ctx, req.(*InsertIntentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CyberVectorProxyService_SelectIntents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SelectIntentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CyberVectorProxyServiceServer).SelectIntents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cybervector.CyberVectorProxyService/SelectIntents",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CyberVectorProxyServiceServer).SelectIntents(ctx, req.(*SelectIntentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CyberVectorProxyService_DeleteIntent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteIntentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CyberVectorProxyServiceServer).DeleteIntent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cybervector.CyberVectorProxyService/DeleteIntent",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CyberVectorProxyServiceServer).DeleteIntent(ctx, req.(*DeleteIntentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CyberVectorProxyService_ServiceDesc is the grpc.ServiceDesc for CyberVectorProxyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -153,6 +249,18 @@ var CyberVectorProxyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UnSubscribe",
 			Handler:    _CyberVectorProxyService_UnSubscribe_Handler,
+		},
+		{
+			MethodName: "InsertIntent",
+			Handler:    _CyberVectorProxyService_InsertIntent_Handler,
+		},
+		{
+			MethodName: "SelectIntents",
+			Handler:    _CyberVectorProxyService_SelectIntents_Handler,
+		},
+		{
+			MethodName: "DeleteIntent",
+			Handler:    _CyberVectorProxyService_DeleteIntent_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

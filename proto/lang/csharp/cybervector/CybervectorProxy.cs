@@ -31,21 +31,47 @@ namespace Cybervector {
             "dGEYAiABKAkSEwoLaW50ZW50X25hbWUYAyABKAkSPgoKcGFyYW1ldGVycxgE",
             "IAMoCzIqLmN5YmVydmVjdG9yLlByb3h5TWVzc2FhZ2UuUGFyYW1ldGVyc0Vu",
             "dHJ5GjEKD1BhcmFtZXRlcnNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUY",
-            "AiABKAk6AjgBKl4KC01lc3NhZ2VUeXBlEgsKB1Vua25vd24QABIOCgpTdWJz",
-            "Y3JpYmVkEAESEAoMVW5zdWJzY3JpYmVkEAISDQoJS2VlcEFsaXZlEAMSEQoN",
-            "UHJvY2Vzc0ludGVudBAEMrMBChdDeWJlclZlY3RvclByb3h5U2VydmljZRJK",
-            "CglTdWJzY3JpYmUSHS5jeWJlcnZlY3Rvci5TdWJzY3JpYmVSZXF1ZXN0Ghou",
-            "Y3liZXJ2ZWN0b3IuUHJveHlNZXNzYWFnZSIAMAESTAoLVW5TdWJzY3JpYmUS",
-            "Hy5jeWJlcnZlY3Rvci5VbnN1YnNjcmliZVJlcXVlc3QaGi5jeWJlcnZlY3Rv",
-            "ci5Qcm94eU1lc3NhYWdlIgBCQFo+Z2l0aHViLmNvbS9jeWIzcmRvZy9lc2Nh",
-            "cGUtcG9kLXByb3h5L3Byb3RvL2xhbmcvZ28vY3liZXJ2ZWN0b3JiBnByb3Rv",
-            "Mw=="));
+            "AiABKAk6AjgBIoUBCg9SZXNwb25zZU1lc3NhZ2USNwoEY29kZRgBIAEoDjIp",
+            "LmN5YmVydmVjdG9yLlJlc3BvbnNlTWVzc2FnZS5SZXNwb25zZUNvZGUSDwoH",
+            "bWVzc2FnZRgCIAEoCSIoCgxSZXNwb25zZUNvZGUSCwoHU1VDQ0VTUxAAEgsK",
+            "B0ZBSUxVUkUQASIqChNJbnNlcnRJbnRlbnRSZXF1ZXN0EhMKC2ludGVudF9k",
+            "YXRhGAEgASgJIkYKFEluc2VydEludGVudFJlc3BvbnNlEi4KCHJlc3BvbnNl",
+            "GAEgASgLMhwuY3liZXJ2ZWN0b3IuUmVzcG9uc2VNZXNzYWdlIioKE1NlbGVj",
+            "dEludGVudFJlcXVlc3QSEwoLZmlsdGVyX2pzb24YASABKAki1gEKFFNlbGVj",
+            "dEludGVudFJlc3BvbnNlEi4KCHJlc3BvbnNlGAEgASgLMhwuY3liZXJ2ZWN0",
+            "b3IuUmVzcG9uc2VNZXNzYWdlEhMKC2ZpbHRlcl9qc29uGAIgASgJEkYKC2lu",
+            "dGVudF9kYXRhGAMgAygLMjEuY3liZXJ2ZWN0b3IuU2VsZWN0SW50ZW50UmVz",
+            "cG9uc2UuSW50ZW50RGF0YUVudHJ5GjEKD0ludGVudERhdGFFbnRyeRILCgNr",
+            "ZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIigKE0RlbGV0ZUludGVudFJl",
+            "cXVlc3QSEQoJaW50ZW50X2lkGAEgASgJIkYKFERlbGV0ZUludGVudFJlc3Bv",
+            "bnNlEi4KCHJlc3BvbnNlGAEgASgLMhwuY3liZXJ2ZWN0b3IuUmVzcG9uc2VN",
+            "ZXNzYWdlKl4KC01lc3NhZ2VUeXBlEgsKB1Vua25vd24QABIOCgpTdWJzY3Jp",
+            "YmVkEAESEAoMVW5zdWJzY3JpYmVkEAISDQoJS2VlcEFsaXZlEAMSEQoNUHJv",
+            "Y2Vzc0ludGVudBAEMrkDChdDeWJlclZlY3RvclByb3h5U2VydmljZRJKCglT",
+            "dWJzY3JpYmUSHS5jeWJlcnZlY3Rvci5TdWJzY3JpYmVSZXF1ZXN0GhouY3li",
+            "ZXJ2ZWN0b3IuUHJveHlNZXNzYWFnZSIAMAESTAoLVW5TdWJzY3JpYmUSHy5j",
+            "eWJlcnZlY3Rvci5VbnN1YnNjcmliZVJlcXVlc3QaGi5jeWJlcnZlY3Rvci5Q",
+            "cm94eU1lc3NhYWdlIgASVQoMSW5zZXJ0SW50ZW50EiAuY3liZXJ2ZWN0b3Iu",
+            "SW5zZXJ0SW50ZW50UmVxdWVzdBohLmN5YmVydmVjdG9yLkluc2VydEludGVu",
+            "dFJlc3BvbnNlIgASVgoNU2VsZWN0SW50ZW50cxIgLmN5YmVydmVjdG9yLlNl",
+            "bGVjdEludGVudFJlcXVlc3QaIS5jeWJlcnZlY3Rvci5TZWxlY3RJbnRlbnRS",
+            "ZXNwb25zZSIAElUKDERlbGV0ZUludGVudBIgLmN5YmVydmVjdG9yLkRlbGV0",
+            "ZUludGVudFJlcXVlc3QaIS5jeWJlcnZlY3Rvci5EZWxldGVJbnRlbnRSZXNw",
+            "b25zZSIAQkBaPmdpdGh1Yi5jb20vY3liM3Jkb2cvZXNjYXBlLXBvZC1wcm94",
+            "eS9wcm90by9sYW5nL2dvL2N5YmVydmVjdG9yYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Cybervector.MessageType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.SubscribeRequest), global::Cybervector.SubscribeRequest.Parser, new[]{ "KeepAlive" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.UnsubscribeRequest), global::Cybervector.UnsubscribeRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.ProxyMessaage), global::Cybervector.ProxyMessaage.Parser, new[]{ "MessageType", "MessageData", "IntentName", "Parameters" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.ProxyMessaage), global::Cybervector.ProxyMessaage.Parser, new[]{ "MessageType", "MessageData", "IntentName", "Parameters" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.ResponseMessage), global::Cybervector.ResponseMessage.Parser, new[]{ "Code", "Message" }, null, new[]{ typeof(global::Cybervector.ResponseMessage.Types.ResponseCode) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.InsertIntentRequest), global::Cybervector.InsertIntentRequest.Parser, new[]{ "IntentData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.InsertIntentResponse), global::Cybervector.InsertIntentResponse.Parser, new[]{ "Response" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.SelectIntentRequest), global::Cybervector.SelectIntentRequest.Parser, new[]{ "FilterJson" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.SelectIntentResponse), global::Cybervector.SelectIntentResponse.Parser, new[]{ "Response", "FilterJson", "IntentData" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.DeleteIntentRequest), global::Cybervector.DeleteIntentRequest.Parser, new[]{ "IntentId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.DeleteIntentResponse), global::Cybervector.DeleteIntentResponse.Parser, new[]{ "Response" }, null, null, null)
           }));
     }
     #endregion
@@ -101,7 +127,7 @@ namespace Cybervector {
     public const int KeepAliveFieldNumber = 1;
     private long keepAlive_;
     /// <summary>
-    /// keep alive stream interval in seconds, 
+    /// keep alive stream interval in seconds,
     /// requested from client, default 30 seconds
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -506,6 +532,1015 @@ namespace Cybervector {
           }
           case 34: {
             parameters_.AddEntriesFrom(input, _map_parameters_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ResponseMessage : pb::IMessage<ResponseMessage> {
+    private static readonly pb::MessageParser<ResponseMessage> _parser = new pb::MessageParser<ResponseMessage>(() => new ResponseMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ResponseMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResponseMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResponseMessage(ResponseMessage other) : this() {
+      code_ = other.code_;
+      message_ = other.message_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResponseMessage Clone() {
+      return new ResponseMessage(this);
+    }
+
+    /// <summary>Field number for the "code" field.</summary>
+    public const int CodeFieldNumber = 1;
+    private global::Cybervector.ResponseMessage.Types.ResponseCode code_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Cybervector.ResponseMessage.Types.ResponseCode Code {
+      get { return code_; }
+      set {
+        code_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ResponseMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ResponseMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Code != other.Code) return false;
+      if (Message != other.Message) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Code != 0) hash ^= Code.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Code != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Code);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Code != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Code);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ResponseMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Code != 0) {
+        Code = other.Code;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            code_ = (global::Cybervector.ResponseMessage.Types.ResponseCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ResponseMessage message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum ResponseCode {
+        [pbr::OriginalName("SUCCESS")] Success = 0,
+        [pbr::OriginalName("FAILURE")] Failure = 1,
+      }
+
+    }
+    #endregion
+
+  }
+
+  public sealed partial class InsertIntentRequest : pb::IMessage<InsertIntentRequest> {
+    private static readonly pb::MessageParser<InsertIntentRequest> _parser = new pb::MessageParser<InsertIntentRequest>(() => new InsertIntentRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<InsertIntentRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InsertIntentRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InsertIntentRequest(InsertIntentRequest other) : this() {
+      intentData_ = other.intentData_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InsertIntentRequest Clone() {
+      return new InsertIntentRequest(this);
+    }
+
+    /// <summary>Field number for the "intent_data" field.</summary>
+    public const int IntentDataFieldNumber = 1;
+    private string intentData_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntentData {
+      get { return intentData_; }
+      set {
+        intentData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as InsertIntentRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(InsertIntentRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IntentData != other.IntentData) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IntentData.Length != 0) hash ^= IntentData.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (IntentData.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(IntentData);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (IntentData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntentData);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(InsertIntentRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IntentData.Length != 0) {
+        IntentData = other.IntentData;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            IntentData = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class InsertIntentResponse : pb::IMessage<InsertIntentResponse> {
+    private static readonly pb::MessageParser<InsertIntentResponse> _parser = new pb::MessageParser<InsertIntentResponse>(() => new InsertIntentResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<InsertIntentResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InsertIntentResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InsertIntentResponse(InsertIntentResponse other) : this() {
+      response_ = other.response_ != null ? other.response_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InsertIntentResponse Clone() {
+      return new InsertIntentResponse(this);
+    }
+
+    /// <summary>Field number for the "response" field.</summary>
+    public const int ResponseFieldNumber = 1;
+    private global::Cybervector.ResponseMessage response_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Cybervector.ResponseMessage Response {
+      get { return response_; }
+      set {
+        response_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as InsertIntentResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(InsertIntentResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Response, other.Response)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (response_ != null) hash ^= Response.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (response_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Response);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (response_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Response);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(InsertIntentResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.response_ != null) {
+        if (response_ == null) {
+          response_ = new global::Cybervector.ResponseMessage();
+        }
+        Response.MergeFrom(other.Response);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (response_ == null) {
+              response_ = new global::Cybervector.ResponseMessage();
+            }
+            input.ReadMessage(response_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SelectIntentRequest : pb::IMessage<SelectIntentRequest> {
+    private static readonly pb::MessageParser<SelectIntentRequest> _parser = new pb::MessageParser<SelectIntentRequest>(() => new SelectIntentRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SelectIntentRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectIntentRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectIntentRequest(SelectIntentRequest other) : this() {
+      filterJson_ = other.filterJson_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectIntentRequest Clone() {
+      return new SelectIntentRequest(this);
+    }
+
+    /// <summary>Field number for the "filter_json" field.</summary>
+    public const int FilterJsonFieldNumber = 1;
+    private string filterJson_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FilterJson {
+      get { return filterJson_; }
+      set {
+        filterJson_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SelectIntentRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SelectIntentRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (FilterJson != other.FilterJson) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (FilterJson.Length != 0) hash ^= FilterJson.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (FilterJson.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(FilterJson);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (FilterJson.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FilterJson);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SelectIntentRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.FilterJson.Length != 0) {
+        FilterJson = other.FilterJson;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            FilterJson = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SelectIntentResponse : pb::IMessage<SelectIntentResponse> {
+    private static readonly pb::MessageParser<SelectIntentResponse> _parser = new pb::MessageParser<SelectIntentResponse>(() => new SelectIntentResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SelectIntentResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectIntentResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectIntentResponse(SelectIntentResponse other) : this() {
+      response_ = other.response_ != null ? other.response_.Clone() : null;
+      filterJson_ = other.filterJson_;
+      intentData_ = other.intentData_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SelectIntentResponse Clone() {
+      return new SelectIntentResponse(this);
+    }
+
+    /// <summary>Field number for the "response" field.</summary>
+    public const int ResponseFieldNumber = 1;
+    private global::Cybervector.ResponseMessage response_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Cybervector.ResponseMessage Response {
+      get { return response_; }
+      set {
+        response_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "filter_json" field.</summary>
+    public const int FilterJsonFieldNumber = 2;
+    private string filterJson_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FilterJson {
+      get { return filterJson_; }
+      set {
+        filterJson_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "intent_data" field.</summary>
+    public const int IntentDataFieldNumber = 3;
+    private static readonly pbc::MapField<string, string>.Codec _map_intentData_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 26);
+    private readonly pbc::MapField<string, string> intentData_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, string> IntentData {
+      get { return intentData_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SelectIntentResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SelectIntentResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Response, other.Response)) return false;
+      if (FilterJson != other.FilterJson) return false;
+      if (!IntentData.Equals(other.IntentData)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (response_ != null) hash ^= Response.GetHashCode();
+      if (FilterJson.Length != 0) hash ^= FilterJson.GetHashCode();
+      hash ^= IntentData.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (response_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Response);
+      }
+      if (FilterJson.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(FilterJson);
+      }
+      intentData_.WriteTo(output, _map_intentData_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (response_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Response);
+      }
+      if (FilterJson.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FilterJson);
+      }
+      size += intentData_.CalculateSize(_map_intentData_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SelectIntentResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.response_ != null) {
+        if (response_ == null) {
+          response_ = new global::Cybervector.ResponseMessage();
+        }
+        Response.MergeFrom(other.Response);
+      }
+      if (other.FilterJson.Length != 0) {
+        FilterJson = other.FilterJson;
+      }
+      intentData_.Add(other.intentData_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (response_ == null) {
+              response_ = new global::Cybervector.ResponseMessage();
+            }
+            input.ReadMessage(response_);
+            break;
+          }
+          case 18: {
+            FilterJson = input.ReadString();
+            break;
+          }
+          case 26: {
+            intentData_.AddEntriesFrom(input, _map_intentData_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeleteIntentRequest : pb::IMessage<DeleteIntentRequest> {
+    private static readonly pb::MessageParser<DeleteIntentRequest> _parser = new pb::MessageParser<DeleteIntentRequest>(() => new DeleteIntentRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeleteIntentRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteIntentRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteIntentRequest(DeleteIntentRequest other) : this() {
+      intentId_ = other.intentId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteIntentRequest Clone() {
+      return new DeleteIntentRequest(this);
+    }
+
+    /// <summary>Field number for the "intent_id" field.</summary>
+    public const int IntentIdFieldNumber = 1;
+    private string intentId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IntentId {
+      get { return intentId_; }
+      set {
+        intentId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeleteIntentRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeleteIntentRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IntentId != other.IntentId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IntentId.Length != 0) hash ^= IntentId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (IntentId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(IntentId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (IntentId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IntentId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeleteIntentRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IntentId.Length != 0) {
+        IntentId = other.IntentId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            IntentId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeleteIntentResponse : pb::IMessage<DeleteIntentResponse> {
+    private static readonly pb::MessageParser<DeleteIntentResponse> _parser = new pb::MessageParser<DeleteIntentResponse>(() => new DeleteIntentResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeleteIntentResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteIntentResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteIntentResponse(DeleteIntentResponse other) : this() {
+      response_ = other.response_ != null ? other.response_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteIntentResponse Clone() {
+      return new DeleteIntentResponse(this);
+    }
+
+    /// <summary>Field number for the "response" field.</summary>
+    public const int ResponseFieldNumber = 1;
+    private global::Cybervector.ResponseMessage response_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Cybervector.ResponseMessage Response {
+      get { return response_; }
+      set {
+        response_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeleteIntentResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeleteIntentResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Response, other.Response)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (response_ != null) hash ^= Response.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (response_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Response);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (response_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Response);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeleteIntentResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.response_ != null) {
+        if (response_ == null) {
+          response_ = new global::Cybervector.ResponseMessage();
+        }
+        Response.MergeFrom(other.Response);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (response_ == null) {
+              response_ = new global::Cybervector.ResponseMessage();
+            }
+            input.ReadMessage(response_);
             break;
           }
         }

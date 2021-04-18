@@ -6,6 +6,9 @@ option go_package = "github.com/cyb3rdog/escape-pod-proxy/proto/lang/go/cybervec
 service CyberVectorProxyService {
   rpc Subscribe (SubscribeRequest) returns (stream ProxyMessaage) {}
   rpc UnSubscribe (UnsubscribeRequest) returns (ProxyMessaage) {}
+  rpc InsertIntent (InsertIntentRequest) returns (InsertIntentResponse) {}
+  rpc SelectIntents (SelectIntentRequest) returns (SelectIntentResponse) {}
+  rpc DeleteIntent (DeleteIntentRequest) returns (DeleteIntentResponse) {}
 }
 
 enum MessageType{
@@ -34,4 +37,40 @@ message ProxyMessaage {
   string intent_name = 3;
   // A list of parameters as parsed by the escape pod
   map<string, string> parameters = 4;
+}
+
+message ResponseMessage {
+  enum ResponseCode {
+    SUCCESS = 0;
+    FAILURE = 1;
+  }
+  ResponseCode code = 1;
+  string message = 2;
+}
+
+
+message InsertIntentRequest {
+  string intent_data = 1;
+}
+
+message InsertIntentResponse {
+  ResponseMessage response = 1;
+}
+
+message SelectIntentRequest {
+  string filter_json = 1;
+}
+
+message SelectIntentResponse {
+  ResponseMessage response = 1;
+  string filter_json = 2;
+  map<string, string> intent_data = 3;
+}
+
+message DeleteIntentRequest {
+  string intent_id = 1;
+}
+
+message DeleteIntentResponse {
+  ResponseMessage response = 1;
 }

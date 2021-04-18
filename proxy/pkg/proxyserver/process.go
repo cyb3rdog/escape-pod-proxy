@@ -47,7 +47,6 @@ func (server *ProxyServer) Push(ctx context.Context, request *podextension.Unary
 			log.Println("Closing Event stream (on send):", err)
 			return "", nil, err
 		}
-
 	}
 
 	return "", nil, nil
@@ -106,6 +105,70 @@ func (server *ProxyServer) UnSubscribe(context context.Context, request *cyberve
 	response := cybervector.ProxyMessaage{
 		MessageType: cybervector.MessageType_Unsubscribed,
 		MessageData: "{'message':'Successfully unsubscribed from Cyb3rVector EscapePod extension'}",
+	}
+
+	return &response, nil
+}
+
+func (server *ProxyServer) SelectIntents(context context.Context, request *cybervector.SelectIntentRequest) (*cybervector.SelectIntentResponse, error) {
+
+	intent_data := make(map[string]string)
+	response_message := cybervector.ResponseMessage{}
+
+	json_data, err := server.factory.SelectIntents(request.FilterJson)
+	if err != nil {
+		response_message.Code = cybervector.ResponseMessage_FAILURE
+		response_message.Message = err.Error()
+	} else {
+		response_message.Code = cybervector.ResponseMessage_SUCCESS
+		response_message.Message = "OK"
+		intent_data = json_data
+	}
+
+	response := cybervector.SelectIntentResponse{
+		Response:   &response_message,
+		FilterJson: request.FilterJson,
+		IntentData: intent_data,
+	}
+
+	return &response, nil
+}
+
+func (server *ProxyServer) InsertIntent(context context.Context, request *cybervector.InsertIntentRequest) (*cybervector.InsertIntentResponse, error) {
+
+	response_message := cybervector.ResponseMessage{}
+
+	err := server.factory.InsertIntent(request.IntentData)
+	if err != nil {
+		response_message.Code = cybervector.ResponseMessage_FAILURE
+		response_message.Message = err.Error()
+	} else {
+		response_message.Code = cybervector.ResponseMessage_SUCCESS
+		response_message.Message = "OK"
+	}
+
+	response := cybervector.InsertIntentResponse{
+		Response: &response_message,
+	}
+
+	return &response, nil
+}
+
+func (server *ProxyServer) DeleteIntent(context context.Context, request *cybervector.DeleteIntentRequest) (*cybervector.DeleteIntentResponse, error) {
+
+	response_message := cybervector.ResponseMessage{}
+
+	err := server.factory.DeleteIntent(request.IntentId)
+	if err != nil {
+		response_message.Code = cybervector.ResponseMessage_FAILURE
+		response_message.Message = err.Error()
+	} else {
+		response_message.Code = cybervector.ResponseMessage_SUCCESS
+		response_message.Message = "OK"
+	}
+
+	response := cybervector.DeleteIntentResponse{
+		Response: &response_message,
 	}
 
 	return &response, nil

@@ -10,15 +10,12 @@ package proxyclient
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/cyb3rdog/escape-pod-proxy/proto/lang/go/podextension"
 )
 
-// Unary checks the function map for an appropriate processor and either processes it or returns an error
+// Extension server entry point with UnaryRequest to proxied as a new event pushed to event stream
 func (client *ProxyClient) Unary(context context.Context, request *podextension.UnaryReq) (*podextension.UnaryResp, error) {
-
-	fmt.Println(request)
 
 	key, params, err := client.proxy.Push(context, request)
 	if err != nil {

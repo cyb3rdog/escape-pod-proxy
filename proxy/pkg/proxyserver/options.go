@@ -12,6 +12,7 @@ package proxyserver
 import (
 	"log"
 
+	interfaces "github.com/cyb3rdog/escape-pod-proxy/proxy/pkg"
 	"github.com/digital-dream-labs/hugh/config"
 )
 
@@ -19,7 +20,15 @@ import (
 type Option func(*options)
 
 type options struct {
-	prefix string
+	prefix  string
+	factory interfaces.IntentFactory
+}
+
+// WithIntentFactory adds the factory for altering intents
+func WithIntentFactory(factory interfaces.IntentFactory) Option {
+	return func(o *options) {
+		o.factory = factory
+	}
 }
 
 // WithViper loads a config from environment variables.
