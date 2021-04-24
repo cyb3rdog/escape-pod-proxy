@@ -15,8 +15,8 @@
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageId>PHACT.Cyb3rVector.Cyb3rPod</PackageId>
     <Title>DDL Vector EscapePod</Title>
-    <PackageIconUrl>https://www.weekendrobot.com/images/ankivectoricon.png</PackageIconUrl>
-    <PackageIcon>AnkiVectorIcon.png</PackageIcon>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageIcon>EscapePod.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
@@ -25,25 +25,45 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="AnkiVectorIcon.png" Pack="true" PackagePath="\" />
+    <Resource Include="Resources\Images\EscapePod.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="grpc_csharp_plugin.exe" />
     <None Remove="protoc.exe" />
+    <None Remove="Resources\cybervector-proxy" />
+    <None Remove="Resources\cybervector-proxy.conf" />
+    <None Remove="Resources\cybervector-proxy.service" />
+    <None Remove="Resources\cybervector-proxy.sh" />
+    <None Remove="Resources\Images\EscapePod.ico" />
+    <None Remove="Resources\Images\EscapePod.png" />
+    <None Remove="Resources\Images\pod-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Api.CommonProtos" Version="2.2.0" />
+    <EmbeddedResource Include="Resources\cybervector-proxy" />
+    <EmbeddedResource Include="Resources\cybervector-proxy.conf" />
+    <EmbeddedResource Include="Resources\cybervector-proxy.service" />
+    <EmbeddedResource Include="Resources\cybervector-proxy.sh" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Api.CommonProtos" Version="2.3.0" />
     <PackageReference Include="Google.Protobuf" Version="3.15.8" />
     <PackageReference Include="Grpc" Version="2.37.0" />
     <PackageReference Include="Grpc.Core" Version="2.37.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="SSH.NET" Version="2020.0.1" />
     <PackageReference Include="Zeroconf" Version="3.4.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="proto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\EscapePod.ico" />
+    <Resource Include="Resources\Images\pod-icon.png" />
   </ItemGroup>
 
 </Project>

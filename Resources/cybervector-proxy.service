@@ -1,0 +1,27 @@
+[Unit]
+Description=Cyb3rVector Escapepod Extension Proxy 
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+LimitNOFILE=1024
+Restart=on-failure
+RestartSec=10
+EnvironmentFile=/etc/cybervector-proxy.conf
+WorkingDirectory=/home/ubuntu
+ExecStart=/usr/local/escapepod/bin/cybervector-proxy
+PermissionsStartOnly=true
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=cybervector_proxy
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_RAW
+CapabilityBoundingSet=CAP_NET_ADMIN
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_RAW
+AmbientCapabilities=CAP_NET_ADMIN
+
+[Install]
+WantedBy=multi-user.target
