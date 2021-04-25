@@ -24,54 +24,61 @@ namespace Cybervector {
     static CybervectorProxyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdjeWJlcnZlY3Rvcl9wcm94eS5wcm90bxILY3liZXJ2ZWN0b3IiJgoQU3Vi",
-            "c2NyaWJlUmVxdWVzdBISCgprZWVwX2FsaXZlGAEgASgDIhQKElVuc3Vic2Ny",
-            "aWJlUmVxdWVzdCLdAQoNUHJveHlNZXNzYWFnZRIuCgxtZXNzYWdlX3R5cGUY",
-            "ASABKA4yGC5jeWJlcnZlY3Rvci5NZXNzYWdlVHlwZRIUCgxtZXNzYWdlX2Rh",
-            "dGEYAiABKAkSEwoLaW50ZW50X25hbWUYAyABKAkSPgoKcGFyYW1ldGVycxgE",
-            "IAMoCzIqLmN5YmVydmVjdG9yLlByb3h5TWVzc2FhZ2UuUGFyYW1ldGVyc0Vu",
-            "dHJ5GjEKD1BhcmFtZXRlcnNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUY",
-            "AiABKAk6AjgBIoUBCg9SZXNwb25zZU1lc3NhZ2USNwoEY29kZRgBIAEoDjIp",
-            "LmN5YmVydmVjdG9yLlJlc3BvbnNlTWVzc2FnZS5SZXNwb25zZUNvZGUSDwoH",
-            "bWVzc2FnZRgCIAEoCSIoCgxSZXNwb25zZUNvZGUSCwoHU1VDQ0VTUxAAEgsK",
-            "B0ZBSUxVUkUQASIqChNJbnNlcnRJbnRlbnRSZXF1ZXN0EhMKC2ludGVudF9k",
-            "YXRhGAEgASgJIkYKFEluc2VydEludGVudFJlc3BvbnNlEi4KCHJlc3BvbnNl",
-            "GAEgASgLMhwuY3liZXJ2ZWN0b3IuUmVzcG9uc2VNZXNzYWdlIioKE1NlbGVj",
-            "dEludGVudFJlcXVlc3QSEwoLZmlsdGVyX2pzb24YASABKAki1gEKFFNlbGVj",
-            "dEludGVudFJlc3BvbnNlEi4KCHJlc3BvbnNlGAEgASgLMhwuY3liZXJ2ZWN0",
-            "b3IuUmVzcG9uc2VNZXNzYWdlEhMKC2ZpbHRlcl9qc29uGAIgASgJEkYKC2lu",
-            "dGVudF9kYXRhGAMgAygLMjEuY3liZXJ2ZWN0b3IuU2VsZWN0SW50ZW50UmVz",
-            "cG9uc2UuSW50ZW50RGF0YUVudHJ5GjEKD0ludGVudERhdGFFbnRyeRILCgNr",
-            "ZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIigKE0RlbGV0ZUludGVudFJl",
-            "cXVlc3QSEQoJaW50ZW50X2lkGAEgASgJIkYKFERlbGV0ZUludGVudFJlc3Bv",
-            "bnNlEi4KCHJlc3BvbnNlGAEgASgLMhwuY3liZXJ2ZWN0b3IuUmVzcG9uc2VN",
-            "ZXNzYWdlKl4KC01lc3NhZ2VUeXBlEgsKB1Vua25vd24QABIOCgpTdWJzY3Jp",
-            "YmVkEAESEAoMVW5zdWJzY3JpYmVkEAISDQoJS2VlcEFsaXZlEAMSEQoNUHJv",
-            "Y2Vzc0ludGVudBAEMrkDChdDeWJlclZlY3RvclByb3h5U2VydmljZRJKCglT",
-            "dWJzY3JpYmUSHS5jeWJlcnZlY3Rvci5TdWJzY3JpYmVSZXF1ZXN0GhouY3li",
-            "ZXJ2ZWN0b3IuUHJveHlNZXNzYWFnZSIAMAESTAoLVW5TdWJzY3JpYmUSHy5j",
-            "eWJlcnZlY3Rvci5VbnN1YnNjcmliZVJlcXVlc3QaGi5jeWJlcnZlY3Rvci5Q",
-            "cm94eU1lc3NhYWdlIgASVQoMSW5zZXJ0SW50ZW50EiAuY3liZXJ2ZWN0b3Iu",
-            "SW5zZXJ0SW50ZW50UmVxdWVzdBohLmN5YmVydmVjdG9yLkluc2VydEludGVu",
-            "dFJlc3BvbnNlIgASVgoNU2VsZWN0SW50ZW50cxIgLmN5YmVydmVjdG9yLlNl",
-            "bGVjdEludGVudFJlcXVlc3QaIS5jeWJlcnZlY3Rvci5TZWxlY3RJbnRlbnRS",
-            "ZXNwb25zZSIAElUKDERlbGV0ZUludGVudBIgLmN5YmVydmVjdG9yLkRlbGV0",
-            "ZUludGVudFJlcXVlc3QaIS5jeWJlcnZlY3Rvci5EZWxldGVJbnRlbnRSZXNw",
-            "b25zZSIAQkBaPmdpdGh1Yi5jb20vY3liM3Jkb2cvZXNjYXBlLXBvZC1wcm94",
-            "eS9wcm90by9sYW5nL2dvL2N5YmVydmVjdG9yYgZwcm90bzM="));
+            "ChdjeWJlcnZlY3Rvcl9wcm94eS5wcm90bxILY3liZXJ2ZWN0b3IihQEKD1Jl",
+            "c3BvbnNlTWVzc2FnZRI3CgRjb2RlGAEgASgOMikuY3liZXJ2ZWN0b3IuUmVz",
+            "cG9uc2VNZXNzYWdlLlJlc3BvbnNlQ29kZRIPCgdtZXNzYWdlGAIgASgJIigK",
+            "DFJlc3BvbnNlQ29kZRILCgdTVUNDRVNTEAASCwoHRkFJTFVSRRABIg8KDVN0",
+            "YXR1c1JlcXVlc3QiNQoOU3RhdHVzUmVzcG9uc2USDwoHVmVyc2lvbhgBIAEo",
+            "CRISCgpTdWJzY3JpYmVkGAIgASgFIiYKEFN1YnNjcmliZVJlcXVlc3QSEgoK",
+            "a2VlcF9hbGl2ZRgBIAEoAyIiChJVbnN1YnNjcmliZVJlcXVlc3QSDAoEdXVp",
+            "ZBgBIAEoCSLdAQoNUHJveHlNZXNzYWFnZRIuCgxtZXNzYWdlX3R5cGUYASAB",
+            "KA4yGC5jeWJlcnZlY3Rvci5NZXNzYWdlVHlwZRIUCgxtZXNzYWdlX2RhdGEY",
+            "AiABKAkSEwoLaW50ZW50X25hbWUYAyABKAkSPgoKcGFyYW1ldGVycxgEIAMo",
+            "CzIqLmN5YmVydmVjdG9yLlByb3h5TWVzc2FhZ2UuUGFyYW1ldGVyc0VudHJ5",
+            "GjEKD1BhcmFtZXRlcnNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiAB",
+            "KAk6AjgBIioKE0luc2VydEludGVudFJlcXVlc3QSEwoLaW50ZW50X2RhdGEY",
+            "ASABKAkiXAoUSW5zZXJ0SW50ZW50UmVzcG9uc2USLgoIcmVzcG9uc2UYASAB",
+            "KAsyHC5jeWJlcnZlY3Rvci5SZXNwb25zZU1lc3NhZ2USFAoMaW5zZXJ0ZWRf",
+            "b2lkGAIgASgJIioKE1NlbGVjdEludGVudFJlcXVlc3QSEwoLZmlsdGVyX2pz",
+            "b24YASABKAki1gEKFFNlbGVjdEludGVudFJlc3BvbnNlEi4KCHJlc3BvbnNl",
+            "GAEgASgLMhwuY3liZXJ2ZWN0b3IuUmVzcG9uc2VNZXNzYWdlEhMKC2ZpbHRl",
+            "cl9qc29uGAIgASgJEkYKC2ludGVudF9kYXRhGAMgAygLMjEuY3liZXJ2ZWN0",
+            "b3IuU2VsZWN0SW50ZW50UmVzcG9uc2UuSW50ZW50RGF0YUVudHJ5GjEKD0lu",
+            "dGVudERhdGFFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgB",
+            "IigKE0RlbGV0ZUludGVudFJlcXVlc3QSEQoJaW50ZW50X2lkGAEgASgJIlcK",
+            "FERlbGV0ZUludGVudFJlc3BvbnNlEi4KCHJlc3BvbnNlGAEgASgLMhwuY3li",
+            "ZXJ2ZWN0b3IuUmVzcG9uc2VNZXNzYWdlEg8KB2RlbGV0ZWQYAiABKAgqXgoL",
+            "TWVzc2FnZVR5cGUSCwoHVW5rbm93bhAAEg4KClN1YnNjcmliZWQQARIQCgxV",
+            "bnN1YnNjcmliZWQQAhINCglLZWVwQWxpdmUQAxIRCg1Qcm9jZXNzSW50ZW50",
+            "EAQygQQKF0N5YmVyVmVjdG9yUHJveHlTZXJ2aWNlEkYKCUdldFN0YXR1cxIa",
+            "LmN5YmVydmVjdG9yLlN0YXR1c1JlcXVlc3QaGy5jeWJlcnZlY3Rvci5TdGF0",
+            "dXNSZXNwb25zZSIAEkoKCVN1YnNjcmliZRIdLmN5YmVydmVjdG9yLlN1YnNj",
+            "cmliZVJlcXVlc3QaGi5jeWJlcnZlY3Rvci5Qcm94eU1lc3NhYWdlIgAwARJM",
+            "CgtVblN1YnNjcmliZRIfLmN5YmVydmVjdG9yLlVuc3Vic2NyaWJlUmVxdWVz",
+            "dBoaLmN5YmVydmVjdG9yLlByb3h5TWVzc2FhZ2UiABJVCgxJbnNlcnRJbnRl",
+            "bnQSIC5jeWJlcnZlY3Rvci5JbnNlcnRJbnRlbnRSZXF1ZXN0GiEuY3liZXJ2",
+            "ZWN0b3IuSW5zZXJ0SW50ZW50UmVzcG9uc2UiABJWCg1TZWxlY3RJbnRlbnRz",
+            "EiAuY3liZXJ2ZWN0b3IuU2VsZWN0SW50ZW50UmVxdWVzdBohLmN5YmVydmVj",
+            "dG9yLlNlbGVjdEludGVudFJlc3BvbnNlIgASVQoMRGVsZXRlSW50ZW50EiAu",
+            "Y3liZXJ2ZWN0b3IuRGVsZXRlSW50ZW50UmVxdWVzdBohLmN5YmVydmVjdG9y",
+            "LkRlbGV0ZUludGVudFJlc3BvbnNlIgBCQFo+Z2l0aHViLmNvbS9jeWIzcmRv",
+            "Zy9lc2NhcGUtcG9kLXByb3h5L3Byb3RvL2xhbmcvZ28vY3liZXJ2ZWN0b3Ji",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Cybervector.MessageType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.SubscribeRequest), global::Cybervector.SubscribeRequest.Parser, new[]{ "KeepAlive" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.UnsubscribeRequest), global::Cybervector.UnsubscribeRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.ProxyMessaage), global::Cybervector.ProxyMessaage.Parser, new[]{ "MessageType", "MessageData", "IntentName", "Parameters" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.ResponseMessage), global::Cybervector.ResponseMessage.Parser, new[]{ "Code", "Message" }, null, new[]{ typeof(global::Cybervector.ResponseMessage.Types.ResponseCode) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.StatusRequest), global::Cybervector.StatusRequest.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.StatusResponse), global::Cybervector.StatusResponse.Parser, new[]{ "Version", "Subscribed" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.SubscribeRequest), global::Cybervector.SubscribeRequest.Parser, new[]{ "KeepAlive" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.UnsubscribeRequest), global::Cybervector.UnsubscribeRequest.Parser, new[]{ "Uuid" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.ProxyMessaage), global::Cybervector.ProxyMessaage.Parser, new[]{ "MessageType", "MessageData", "IntentName", "Parameters" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.InsertIntentRequest), global::Cybervector.InsertIntentRequest.Parser, new[]{ "IntentData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.InsertIntentResponse), global::Cybervector.InsertIntentResponse.Parser, new[]{ "Response" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.InsertIntentResponse), global::Cybervector.InsertIntentResponse.Parser, new[]{ "Response", "InsertedOid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.SelectIntentRequest), global::Cybervector.SelectIntentRequest.Parser, new[]{ "FilterJson" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.SelectIntentResponse), global::Cybervector.SelectIntentResponse.Parser, new[]{ "Response", "FilterJson", "IntentData" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.DeleteIntentRequest), global::Cybervector.DeleteIntentRequest.Parser, new[]{ "IntentId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.DeleteIntentResponse), global::Cybervector.DeleteIntentResponse.Parser, new[]{ "Response" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cybervector.DeleteIntentResponse), global::Cybervector.DeleteIntentResponse.Parser, new[]{ "Response", "Deleted" }, null, null, null)
           }));
     }
     #endregion
@@ -89,6 +96,433 @@ namespace Cybervector {
   #endregion
 
   #region Messages
+  public sealed partial class ResponseMessage : pb::IMessage<ResponseMessage> {
+    private static readonly pb::MessageParser<ResponseMessage> _parser = new pb::MessageParser<ResponseMessage>(() => new ResponseMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ResponseMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResponseMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResponseMessage(ResponseMessage other) : this() {
+      code_ = other.code_;
+      message_ = other.message_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResponseMessage Clone() {
+      return new ResponseMessage(this);
+    }
+
+    /// <summary>Field number for the "code" field.</summary>
+    public const int CodeFieldNumber = 1;
+    private global::Cybervector.ResponseMessage.Types.ResponseCode code_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Cybervector.ResponseMessage.Types.ResponseCode Code {
+      get { return code_; }
+      set {
+        code_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ResponseMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ResponseMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Code != other.Code) return false;
+      if (Message != other.Message) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Code != 0) hash ^= Code.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Code != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Code);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Code != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Code);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ResponseMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Code != 0) {
+        Code = other.Code;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            code_ = (global::Cybervector.ResponseMessage.Types.ResponseCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ResponseMessage message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum ResponseCode {
+        [pbr::OriginalName("SUCCESS")] Success = 0,
+        [pbr::OriginalName("FAILURE")] Failure = 1,
+      }
+
+    }
+    #endregion
+
+  }
+
+  public sealed partial class StatusRequest : pb::IMessage<StatusRequest> {
+    private static readonly pb::MessageParser<StatusRequest> _parser = new pb::MessageParser<StatusRequest>(() => new StatusRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<StatusRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StatusRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StatusRequest(StatusRequest other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StatusRequest Clone() {
+      return new StatusRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as StatusRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(StatusRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(StatusRequest other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class StatusResponse : pb::IMessage<StatusResponse> {
+    private static readonly pb::MessageParser<StatusResponse> _parser = new pb::MessageParser<StatusResponse>(() => new StatusResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<StatusResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StatusResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StatusResponse(StatusResponse other) : this() {
+      version_ = other.version_;
+      subscribed_ = other.subscribed_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StatusResponse Clone() {
+      return new StatusResponse(this);
+    }
+
+    /// <summary>Field number for the "Version" field.</summary>
+    public const int VersionFieldNumber = 1;
+    private string version_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Version {
+      get { return version_; }
+      set {
+        version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Subscribed" field.</summary>
+    public const int SubscribedFieldNumber = 2;
+    private int subscribed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Subscribed {
+      get { return subscribed_; }
+      set {
+        subscribed_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as StatusResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(StatusResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Version != other.Version) return false;
+      if (Subscribed != other.Subscribed) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (Subscribed != 0) hash ^= Subscribed.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Version.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Version);
+      }
+      if (Subscribed != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Subscribed);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Version.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      }
+      if (Subscribed != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Subscribed);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(StatusResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Version.Length != 0) {
+        Version = other.Version;
+      }
+      if (other.Subscribed != 0) {
+        Subscribed = other.Subscribed;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Version = input.ReadString();
+            break;
+          }
+          case 16: {
+            Subscribed = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class SubscribeRequest : pb::IMessage<SubscribeRequest> {
     private static readonly pb::MessageParser<SubscribeRequest> _parser = new pb::MessageParser<SubscribeRequest>(() => new SubscribeRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -97,7 +531,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -230,7 +664,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -247,12 +681,24 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UnsubscribeRequest(UnsubscribeRequest other) : this() {
+      uuid_ = other.uuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UnsubscribeRequest Clone() {
       return new UnsubscribeRequest(this);
+    }
+
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 1;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -268,12 +714,14 @@ namespace Cybervector {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Uuid != other.Uuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -287,6 +735,10 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -295,6 +747,9 @@ namespace Cybervector {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -305,6 +760,9 @@ namespace Cybervector {
     public void MergeFrom(UnsubscribeRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -317,6 +775,10 @@ namespace Cybervector {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            Uuid = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -331,7 +793,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -540,175 +1002,6 @@ namespace Cybervector {
 
   }
 
-  public sealed partial class ResponseMessage : pb::IMessage<ResponseMessage> {
-    private static readonly pb::MessageParser<ResponseMessage> _parser = new pb::MessageParser<ResponseMessage>(() => new ResponseMessage());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ResponseMessage> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ResponseMessage() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ResponseMessage(ResponseMessage other) : this() {
-      code_ = other.code_;
-      message_ = other.message_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ResponseMessage Clone() {
-      return new ResponseMessage(this);
-    }
-
-    /// <summary>Field number for the "code" field.</summary>
-    public const int CodeFieldNumber = 1;
-    private global::Cybervector.ResponseMessage.Types.ResponseCode code_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Cybervector.ResponseMessage.Types.ResponseCode Code {
-      get { return code_; }
-      set {
-        code_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 2;
-    private string message_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Message {
-      get { return message_; }
-      set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ResponseMessage);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ResponseMessage other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Code != other.Code) return false;
-      if (Message != other.Message) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Code != 0) hash ^= Code.GetHashCode();
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Code != 0) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Code);
-      }
-      if (Message.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Message);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Code != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Code);
-      }
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ResponseMessage other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Code != 0) {
-        Code = other.Code;
-      }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            code_ = (global::Cybervector.ResponseMessage.Types.ResponseCode) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            Message = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the ResponseMessage message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      public enum ResponseCode {
-        [pbr::OriginalName("SUCCESS")] Success = 0,
-        [pbr::OriginalName("FAILURE")] Failure = 1,
-      }
-
-    }
-    #endregion
-
-  }
-
   public sealed partial class InsertIntentRequest : pb::IMessage<InsertIntentRequest> {
     private static readonly pb::MessageParser<InsertIntentRequest> _parser = new pb::MessageParser<InsertIntentRequest>(() => new InsertIntentRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -717,7 +1010,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -846,7 +1139,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -864,6 +1157,7 @@ namespace Cybervector {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InsertIntentResponse(InsertIntentResponse other) : this() {
       response_ = other.response_ != null ? other.response_.Clone() : null;
+      insertedOid_ = other.insertedOid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -883,6 +1177,17 @@ namespace Cybervector {
       }
     }
 
+    /// <summary>Field number for the "inserted_oid" field.</summary>
+    public const int InsertedOidFieldNumber = 2;
+    private string insertedOid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string InsertedOid {
+      get { return insertedOid_; }
+      set {
+        insertedOid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as InsertIntentResponse);
@@ -897,6 +1202,7 @@ namespace Cybervector {
         return true;
       }
       if (!object.Equals(Response, other.Response)) return false;
+      if (InsertedOid != other.InsertedOid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -904,6 +1210,7 @@ namespace Cybervector {
     public override int GetHashCode() {
       int hash = 1;
       if (response_ != null) hash ^= Response.GetHashCode();
+      if (InsertedOid.Length != 0) hash ^= InsertedOid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -921,6 +1228,10 @@ namespace Cybervector {
         output.WriteRawTag(10);
         output.WriteMessage(Response);
       }
+      if (InsertedOid.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(InsertedOid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -931,6 +1242,9 @@ namespace Cybervector {
       int size = 0;
       if (response_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Response);
+      }
+      if (InsertedOid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InsertedOid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -948,6 +1262,9 @@ namespace Cybervector {
           response_ = new global::Cybervector.ResponseMessage();
         }
         Response.MergeFrom(other.Response);
+      }
+      if (other.InsertedOid.Length != 0) {
+        InsertedOid = other.InsertedOid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -967,6 +1284,10 @@ namespace Cybervector {
             input.ReadMessage(response_);
             break;
           }
+          case 18: {
+            InsertedOid = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -981,7 +1302,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1110,7 +1431,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1293,7 +1614,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1422,7 +1743,7 @@ namespace Cybervector {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Cybervector.CybervectorProxyReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1440,6 +1761,7 @@ namespace Cybervector {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DeleteIntentResponse(DeleteIntentResponse other) : this() {
       response_ = other.response_ != null ? other.response_.Clone() : null;
+      deleted_ = other.deleted_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1459,6 +1781,17 @@ namespace Cybervector {
       }
     }
 
+    /// <summary>Field number for the "deleted" field.</summary>
+    public const int DeletedFieldNumber = 2;
+    private bool deleted_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Deleted {
+      get { return deleted_; }
+      set {
+        deleted_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DeleteIntentResponse);
@@ -1473,6 +1806,7 @@ namespace Cybervector {
         return true;
       }
       if (!object.Equals(Response, other.Response)) return false;
+      if (Deleted != other.Deleted) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1480,6 +1814,7 @@ namespace Cybervector {
     public override int GetHashCode() {
       int hash = 1;
       if (response_ != null) hash ^= Response.GetHashCode();
+      if (Deleted != false) hash ^= Deleted.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1497,6 +1832,10 @@ namespace Cybervector {
         output.WriteRawTag(10);
         output.WriteMessage(Response);
       }
+      if (Deleted != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Deleted);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1507,6 +1846,9 @@ namespace Cybervector {
       int size = 0;
       if (response_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Response);
+      }
+      if (Deleted != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1525,6 +1867,9 @@ namespace Cybervector {
         }
         Response.MergeFrom(other.Response);
       }
+      if (other.Deleted != false) {
+        Deleted = other.Deleted;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1541,6 +1886,10 @@ namespace Cybervector {
               response_ = new global::Cybervector.ResponseMessage();
             }
             input.ReadMessage(response_);
+            break;
+          }
+          case 16: {
+            Deleted = input.ReadBool();
             break;
           }
         }

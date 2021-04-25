@@ -21,12 +21,17 @@ import (
 	logger "github.com/digital-dream-labs/hugh/log"
 )
 
+type Subscriber struct {
+	done   chan bool
+	stream cybervector.CyberVectorProxyService_SubscribeServer
+}
+
 // ProxyServer is the configuration struct
 type ProxyServer struct {
 	cybervector.UnimplementedCyberVectorProxyServiceServer
 	factory     interfaces.IntentFactory
 	server      *server.Server
-	subscribers map[string]cybervector.CyberVectorProxyService_SubscribeServer
+	subscribers map[string]Subscriber
 }
 
 // New returns a populated ProxyServer struct
@@ -62,7 +67,7 @@ func New(opts ...Option) (*ProxyServer, error) {
 	proxy := ProxyServer{
 		server:      srv,
 		factory:     cfg.factory,
-		subscribers: make(map[string]cybervector.CyberVectorProxyService_SubscribeServer),
+		subscribers: make(map[string]Subscriber),
 	}
 
 	cybervector.RegisterCyberVectorProxyServiceServer(srv.Transport(), &proxy)

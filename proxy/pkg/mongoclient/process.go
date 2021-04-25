@@ -17,31 +17,34 @@ import (
 )
 
 //
-func (client *MongoClient) InsertIntent(intent_json string) error {
+func (client *MongoClient) InsertIntent(intent_json string) (string, error) {
 
 	var newIntent interface{}
 	err := bson.UnmarshalExtJSON([]byte(intent_json), true, &newIntent)
 	if err != nil {
-		return err
+		return "", err
 	}
-	_, err = client.intents.InsertOne(context.TODO(), newIntent)
+	insertResult, err := client.intents.InsertOne(context.TODO(), newIntent)
 	if err != nil {
-		return err
+		return "", err
 	}
-
-	return nil
+	oid := insertResult.InsertedID.(primitive.ObjectID).Hex()
+	return oid, nil
 }
 
 //
-func (client *MongoClient) DeleteIntent(intent_id string) error {
+func (client *MongoClient) DeleteIntent(intent_id string) (bool, error) {
 
-	filter := bson.D{primitive.E{Key: "_id", Value: bson.D{primitive.E{Key: "$oid", Value: intent_id}}}}
-	_, err := client.intents.DeleteOne(context.TODO(), filter)
+	//filter := bson.D{primitive.E{Key: "_id", Value: bson.D{primitive.E{Key: "oid", Value: intent_id}}}}
+	objectId, err := primitive.ObjectIDFromHex(intent_id)
 	if err != nil {
-		return err
+		return false, err
 	}
-
-	return nil
+	deleteResult, err := client.intents.DeleteOne(context.TODO(), bson.M{"_id": objectId})
+	if err != nil {
+		return false, err
+	}
+	return (deleteResult.DeletedCount > 0), nil
 }
 
 //

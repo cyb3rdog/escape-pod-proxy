@@ -4,14 +4,35 @@ package cybervector;
 option go_package = "github.com/cyb3rdog/escape-pod-proxy/proto/lang/go/cybervector";
 
 service CyberVectorProxyService {
+  rpc GetStatus (StatusRequest) returns (StatusResponse) {}
+
   rpc Subscribe (SubscribeRequest) returns (stream ProxyMessaage) {}
   rpc UnSubscribe (UnsubscribeRequest) returns (ProxyMessaage) {}
+
   rpc InsertIntent (InsertIntentRequest) returns (InsertIntentResponse) {}
   rpc SelectIntents (SelectIntentRequest) returns (SelectIntentResponse) {}
   rpc DeleteIntent (DeleteIntentRequest) returns (DeleteIntentResponse) {}
 }
 
-enum MessageType{
+
+message ResponseMessage {
+  enum ResponseCode {
+    SUCCESS = 0;
+    FAILURE = 1;
+  }
+  ResponseCode code = 1;
+  string message = 2;
+}
+
+message StatusRequest {
+}
+
+message StatusResponse {
+  string Version = 1;
+  int32 Subscribed = 2;
+}
+
+enum MessageType {
   Unknown = 0;
   Subscribed = 1;
   Unsubscribed = 2;
@@ -26,6 +47,7 @@ message SubscribeRequest {
 }
 
 message UnsubscribeRequest {
+  string uuid = 1;
 }
 
 message ProxyMessaage {
@@ -39,15 +61,6 @@ message ProxyMessaage {
   map<string, string> parameters = 4;
 }
 
-message ResponseMessage {
-  enum ResponseCode {
-    SUCCESS = 0;
-    FAILURE = 1;
-  }
-  ResponseCode code = 1;
-  string message = 2;
-}
-
 
 message InsertIntentRequest {
   string intent_data = 1;
@@ -55,6 +68,7 @@ message InsertIntentRequest {
 
 message InsertIntentResponse {
   ResponseMessage response = 1;
+  string inserted_oid = 2;
 }
 
 message SelectIntentRequest {
@@ -73,4 +87,5 @@ message DeleteIntentRequest {
 
 message DeleteIntentResponse {
   ResponseMessage response = 1;
+  bool deleted = 2;
 }

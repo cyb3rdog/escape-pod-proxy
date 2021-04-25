@@ -20,7 +20,7 @@ type ProxyTarget interface {
 }
 
 type IntentFactory interface {
-	InsertIntent(intent_json string) error
-	DeleteIntent(intent_id string) error
+	InsertIntent(intent_json string) (string, error)
+	DeleteIntent(intent_id string) (bool, error)
 	SelectIntents(filter_query string) (map[string]string, error)
 }

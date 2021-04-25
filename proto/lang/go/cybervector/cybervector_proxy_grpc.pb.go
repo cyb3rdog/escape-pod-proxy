@@ -18,6 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CyberVectorProxyServiceClient interface {
+	GetStatus(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (*StatusResponse, error)
 	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (CyberVectorProxyService_SubscribeClient, error)
 	UnSubscribe(ctx context.Context, in *UnsubscribeRequest, opts ...grpc.CallOption) (*ProxyMessaage, error)
 	InsertIntent(ctx context.Context, in *InsertIntentRequest, opts ...grpc.CallOption) (*InsertIntentResponse, error)
@@ -31,6 +32,15 @@ type cyberVectorProxyServiceClient struct {
 
 func NewCyberVectorProxyServiceClient(cc grpc.ClientConnInterface) CyberVectorProxyServiceClient {
 	return &cyberVectorProxyServiceClient{cc}
+}
+
+func (c *cyberVectorProxyServiceClient) GetStatus(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (*StatusResponse, error) {
+	out := new(StatusResponse)
+	err := c.cc.Invoke(ctx, "/cybervector.CyberVectorProxyService/GetStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *cyberVectorProxyServiceClient) Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (CyberVectorProxyService_SubscribeClient, error) {
@@ -105,6 +115,7 @@ func (c *cyberVectorProxyServiceClient) DeleteIntent(ctx context.Context, in *De
 // All implementations must embed UnimplementedCyberVectorProxyServiceServer
 // for forward compatibility
 type CyberVectorProxyServiceServer interface {
+	GetStatus(context.Context, *StatusRequest) (*StatusResponse, error)
 	Subscribe(*SubscribeRequest, CyberVectorProxyService_SubscribeServer) error
 	UnSubscribe(context.Context, *UnsubscribeRequest) (*ProxyMessaage, error)
 	InsertIntent(context.Context, *InsertIntentRequest) (*InsertIntentResponse, error)
@@ -117,6 +128,9 @@ type CyberVectorProxyServiceServer interface {
 type UnimplementedCyberVectorProxyServiceServer struct {
 }
 
+func (UnimplementedCyberVectorProxyServiceServer) GetStatus(context.Context, *StatusRequest) (*StatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStatus not implemented")
+}
 func (UnimplementedCyberVectorProxyServiceServer) Subscribe(*SubscribeRequest, CyberVectorProxyService_SubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method Subscribe not implemented")
 }
@@ -144,6 +158,24 @@ type UnsafeCyberVectorProxyServiceServer interface {
 
 func RegisterCyberVectorProxyServiceServer(s grpc.ServiceRegistrar, srv CyberVectorProxyServiceServer) {
 	s.RegisterService(&CyberVectorProxyService_ServiceDesc, srv)
+}
+
+func _CyberVectorProxyService_GetStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CyberVectorProxyServiceServer).GetStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cybervector.CyberVectorProxyService/GetStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CyberVectorProxyServiceServer).GetStatus(ctx, req.(*StatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _CyberVectorProxyService_Subscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
@@ -246,6 +278,10 @@ var CyberVectorProxyService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "cybervector.CyberVectorProxyService",
 	HandlerType: (*CyberVectorProxyServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetStatus",
+			Handler:    _CyberVectorProxyService_GetStatus_Handler,
+		},
 		{
 			MethodName: "UnSubscribe",
 			Handler:    _CyberVectorProxyService_UnSubscribe_Handler,

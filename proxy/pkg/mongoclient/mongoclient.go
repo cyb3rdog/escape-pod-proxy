@@ -11,6 +11,7 @@ package mongoclient
 import (
 	"context"
 	"fmt"
+	"log"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -76,6 +77,7 @@ func New(opts ...Option) (*MongoClient, error) {
 		client:  db_client,
 		intents: intents,
 	}
+	log.Printf("Successfully connected to MongoDB: %v", db_url)
 
 	return &client, nil
 }
