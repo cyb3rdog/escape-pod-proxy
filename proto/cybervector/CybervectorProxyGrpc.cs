@@ -12,6 +12,8 @@ namespace Cybervector {
   {
     static readonly string __ServiceName = "cybervector.CyberVectorProxyService";
 
+    static readonly grpc::Marshaller<global::Cybervector.StatusRequest> __Marshaller_cybervector_StatusRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Cybervector.StatusRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Cybervector.StatusResponse> __Marshaller_cybervector_StatusResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Cybervector.StatusResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Cybervector.SubscribeRequest> __Marshaller_cybervector_SubscribeRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Cybervector.SubscribeRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Cybervector.ProxyMessaage> __Marshaller_cybervector_ProxyMessaage = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Cybervector.ProxyMessaage.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Cybervector.UnsubscribeRequest> __Marshaller_cybervector_UnsubscribeRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Cybervector.UnsubscribeRequest.Parser.ParseFrom);
@@ -21,6 +23,13 @@ namespace Cybervector {
     static readonly grpc::Marshaller<global::Cybervector.SelectIntentResponse> __Marshaller_cybervector_SelectIntentResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Cybervector.SelectIntentResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Cybervector.DeleteIntentRequest> __Marshaller_cybervector_DeleteIntentRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Cybervector.DeleteIntentRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Cybervector.DeleteIntentResponse> __Marshaller_cybervector_DeleteIntentResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Cybervector.DeleteIntentResponse.Parser.ParseFrom);
+
+    static readonly grpc::Method<global::Cybervector.StatusRequest, global::Cybervector.StatusResponse> __Method_GetStatus = new grpc::Method<global::Cybervector.StatusRequest, global::Cybervector.StatusResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetStatus",
+        __Marshaller_cybervector_StatusRequest,
+        __Marshaller_cybervector_StatusResponse);
 
     static readonly grpc::Method<global::Cybervector.SubscribeRequest, global::Cybervector.ProxyMessaage> __Method_Subscribe = new grpc::Method<global::Cybervector.SubscribeRequest, global::Cybervector.ProxyMessaage>(
         grpc::MethodType.ServerStreaming,
@@ -66,6 +75,11 @@ namespace Cybervector {
     /// <summary>Base class for server-side implementations of CyberVectorProxyService</summary>
     public abstract partial class CyberVectorProxyServiceBase
     {
+      public virtual global::System.Threading.Tasks.Task<global::Cybervector.StatusResponse> GetStatus(global::Cybervector.StatusRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       public virtual global::System.Threading.Tasks.Task Subscribe(global::Cybervector.SubscribeRequest request, grpc::IServerStreamWriter<global::Cybervector.ProxyMessaage> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -116,6 +130,22 @@ namespace Cybervector {
       {
       }
 
+      public virtual global::Cybervector.StatusResponse GetStatus(global::Cybervector.StatusRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetStatus(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Cybervector.StatusResponse GetStatus(global::Cybervector.StatusRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetStatus, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Cybervector.StatusResponse> GetStatusAsync(global::Cybervector.StatusRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetStatusAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Cybervector.StatusResponse> GetStatusAsync(global::Cybervector.StatusRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetStatus, null, options, request);
+      }
       public virtual grpc::AsyncServerStreamingCall<global::Cybervector.ProxyMessaage> Subscribe(global::Cybervector.SubscribeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return Subscribe(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -200,6 +230,7 @@ namespace Cybervector {
     public static grpc::ServerServiceDefinition BindService(CyberVectorProxyServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_GetStatus, serviceImpl.GetStatus)
           .AddMethod(__Method_Subscribe, serviceImpl.Subscribe)
           .AddMethod(__Method_UnSubscribe, serviceImpl.UnSubscribe)
           .AddMethod(__Method_InsertIntent, serviceImpl.InsertIntent)
@@ -213,6 +244,7 @@ namespace Cybervector {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CyberVectorProxyServiceBase serviceImpl)
     {
+      serviceBinder.AddMethod(__Method_GetStatus, serviceImpl.GetStatus);
       serviceBinder.AddMethod(__Method_Subscribe, serviceImpl.Subscribe);
       serviceBinder.AddMethod(__Method_UnSubscribe, serviceImpl.UnSubscribe);
       serviceBinder.AddMethod(__Method_InsertIntent, serviceImpl.InsertIntent);

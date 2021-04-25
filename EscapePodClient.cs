@@ -54,11 +54,12 @@ namespace Cyb3rPod
         /// <summary>
         /// Gets the cancellation token source for timing out the event loop
         /// </summary>
-        private CancellationTokenSource timeoutCancellationTokenSource = null;
+        private CancellationTokenSource cancellationTokenSource = null;
 
         private const int DefaultConnectionTimeout = 5_000;
         private static DateTime GrpcDeadline(int timeout) => DateTime.UtcNow.AddMilliseconds(timeout);
 
+        private string uuid;
         private Channel channel;
         private CyberVectorProxyServiceClient client;
 
@@ -73,7 +74,7 @@ namespace Cyb3rPod
         public event EventHandler Connected;
         public event EventHandler Disconnected;
 
-        public event EventHandler Subscribed;
+        public event EventHandler<SubscribedMessage> Subscribed;
         public event EventHandler Unsubscribed;
         public event EventHandler<KeepAliveMessage> KeepAlive;
         public event EventHandler<string> IntentHeard;
@@ -84,6 +85,10 @@ namespace Cyb3rPod
         public EscapePodClient(string hostName = null)
         {
             this.HostName = hostName;
+        }
+        ~EscapePodClient()
+        {
+            this.Dispose();
         }
 
 
@@ -146,7 +151,7 @@ namespace Cyb3rPod
         public async Task Connect(string hostName = null)
         {
             if (this.IsConnected)
-                this.Disconnect();
+                await this.Disconnect().ConfigureAwait(false);
 
             this.isDisconnecting = false;
             if (!string.IsNullOrEmpty(hostName)) this.HostName = hostName;
@@ -154,11 +159,11 @@ namespace Cyb3rPod
 
             this.channel = await this.ConnectChannel(this.HostName, DefaultConnectionTimeout);
             this.client = new CyberVectorProxyServiceClient(channel);
-            this.timeoutCancellationTokenSource = new CancellationTokenSource();
+            this.cancellationTokenSource = new CancellationTokenSource();
 
             this.eventFeed = new AsyncEventLoop<ProxyMessaage>(
-                (token) => client.Subscribe(new SubscribeRequest() { KeepAlive = 10 },
-                    cancellationToken: timeoutCancellationTokenSource.Token),
+                (token) => client.Subscribe(new SubscribeRequest() { KeepAlive = 20 },
+                    cancellationToken: cancellationTokenSource.Token),
                 this.ProcessMessage,
                 this.ProcessInterrupted,
                 this.ProcessException
@@ -169,13 +174,13 @@ namespace Cyb3rPod
                 this.Connected(this, new EventArgs());
         }
 
-        public void Disconnect(bool force = false)
+        public async Task Disconnect()
         {
             try
             {
                 this.isDisconnecting = true;
-                if (!force)
-                    this.client?.UnSubscribe(new UnsubscribeRequest());
+                try { await this.Unsubscribe().ConfigureAwait(false); }
+                catch { /* suppress */ }
                 this.channel?.ShutdownAsync();
             }
             catch { /* supress */ }
@@ -190,6 +195,26 @@ namespace Cyb3rPod
             }
         }
 
+        public async Task<ProxyMessaage> Unsubscribe()
+        {
+            ProxyMessaage response = null;
+            try
+            {
+                response = await this.RunMethod(client => client.UnSubscribeAsync(new UnsubscribeRequest()
+                {
+                    Uuid = this.uuid
+                })).ConfigureAwait(false);
+                this.ProcessMessage(response);
+            }
+            finally
+            {
+                this.cancellationTokenSource?.Cancel();
+                this.cancellationTokenSource = null;
+                this.eventFeed = null;
+            }
+            return response;
+        }
+
         private void ProcessMessage(ProxyMessaage proxyMessage)
         {
             Console.WriteLine(proxyMessage);
@@ -199,7 +224,10 @@ namespace Cyb3rPod
             switch (proxyMessage.MessageType)
             {
                 case MessageType.Subscribed:
-                    this.Subscribed?.Invoke(this, new EventArgs()); break;
+                    SubscribedMessage subscribed = new SubscribedMessage(proxyMessage.MessageData);
+                    this.Subscribed?.Invoke(this, subscribed);
+                    this.uuid = subscribed.Uuid;
+                    break;
                 case MessageType.Unsubscribed:
                     this.Unsubscribed?.Invoke(this, new EventArgs()); break;
                 case MessageType.KeepAlive:
@@ -218,9 +246,15 @@ namespace Cyb3rPod
         {
             if (!this.isDisconnecting)
             {
-                this.Disconnect();
+                _ = this.Disconnect().ConfigureAwait(false);
                 throw new EscapePodConnectionFailed("EscapePod Connection Lost!");
             }
+        }
+
+        public async Task<StatusMessage> GetStatus()
+        {
+            StatusResponse response = await this.RunMethod(client => client.GetStatusAsync(new StatusRequest())).ConfigureAwait(false);
+            return new StatusMessage(response);
         }
 
         public async Task<SelectIntentResponse> SelectIntents(string filter_json = "")
@@ -232,6 +266,14 @@ namespace Cyb3rPod
             if (response.Response.Code == ResponseMessage.Types.ResponseCode.Failure)
                 new EscapePodCommandFailed(response.Response.Message);
             return response;
+        }
+
+        public async Task<string> InsertIntent(EscapePodIntent intent)
+        {
+            if (intent == null) throw new ArgumentNullException(nameof(intent), "Intent cannot be null!");
+            InsertIntentResponse response = await this.InsertIntent(intent.ToJson()).ConfigureAwait(false);
+            intent.Oid = response.InsertedOid;
+            return intent.Oid;
         }
 
         public async Task<InsertIntentResponse> InsertIntent(string intentJson)
@@ -301,7 +343,7 @@ namespace Cyb3rPod
 
         public void Dispose()
         {
-            this.Disconnect();
+            _ = this.Disconnect().ConfigureAwait(false);
         }
     }
 }

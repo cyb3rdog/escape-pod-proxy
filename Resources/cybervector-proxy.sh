@@ -20,4 +20,5 @@ sudo chown root:root /usr/lib/systemd/system/cybervector-proxy.service
 
 # Start Cyb3rVector extension proxy service
 sudo systemctl daemon-reload
+sudo systemctl enable cybervector-proxy
 sudo systemctl start cybervector-proxy

@@ -26,7 +26,7 @@ namespace Cyb3rPod
         }
     }
 
-    public class EscapePodPlugin
+    public class EscapePodPlugin : IDisposable
     {
         private string DeploymentStepDescription { get; set; }
 
@@ -48,6 +48,12 @@ namespace Cyb3rPod
             if (!string.IsNullOrEmpty(hostName)) this.Host = Host;
         }
 
+        public void Dispose()
+        {
+            this.Client?.Dispose();
+        }
+
+
         private void SetDeploymentStep(string stepDescription)
         {
             this.DeploymentStepDescription = stepDescription;
@@ -62,17 +68,20 @@ namespace Cyb3rPod
 
             try
             {
-                this.Client.Disconnect();
+                if (this.Client.IsConnected)
+                    await this.Client.Disconnect().ConfigureAwait(false);
 
+                this.SetDeploymentStep("Connecting to EscapePod...");
                 System.Reflection.Assembly assembly = typeof(EscapePodPlugin).Assembly;
                 ConnectionInfo sshConnection = new ConnectionInfo(host, user, new PasswordAuthenticationMethod(user, pass));
+                await this.ShellExectue(sshConnection, "").ConfigureAwait(false);
 
                 //using (Stream targeFile = File.OpenRead("Resources/cybervector-proxy.conf"))
                 using (Stream targetFile = assembly.GetManifestResourceStream("Cyb3rPod.Resources.cybervector-proxy.conf"))
                 {
                     this.SetDeploymentStep("Uploading Config Files...");
                     string targetPath = "/usr/local/escapepod/bin/cybervector-proxy.conf";
-                    await this.UploadFile(sshConnection, targetFile, targetPath);
+                    await this.UploadFile(sshConnection, targetFile, targetPath).ConfigureAwait(false);
                 }
 
                 //using (Stream targetFile = File.OpenRead("Resources/cybervector-proxy.sh"))
@@ -80,7 +89,7 @@ namespace Cyb3rPod
                 {
                     this.SetDeploymentStep("Uploading Config Files...");
                     string targetPath = "/usr/local/escapepod/bin/cybervector-proxy.sh";
-                    await this.UploadFile(sshConnection, targetFile, targetPath);
+                    await this.UploadFile(sshConnection, targetFile, targetPath).ConfigureAwait(false);
                 }
 
                 using (Stream targetFile = assembly.GetManifestResourceStream("Cyb3rPod.Resources.cybervector-proxy.service"))
@@ -88,7 +97,7 @@ namespace Cyb3rPod
                 {
                     this.SetDeploymentStep("Uploading Proxy Service...");
                     string targetPath = "/usr/local/escapepod/bin/cybervector-proxy.service";
-                    await this.UploadFile(sshConnection, targetFile, targetPath);
+                    await this.UploadFile(sshConnection, targetFile, targetPath).ConfigureAwait(false);
                 }
 
                 using (Stream targetFile = assembly.GetManifestResourceStream("Cyb3rPod.Resources.cybervector-proxy"))
@@ -96,16 +105,43 @@ namespace Cyb3rPod
                 {
                     this.SetDeploymentStep("Uploading Cyb3rVector Extension...");
 
-                    try { await this.ShellExectue(sshConnection, "sudo systemctl stop cybervector-proxy"); }
+                    try { await this.ShellExectue(sshConnection, "sudo systemctl stop cybervector-proxy").ConfigureAwait(false); }
                     catch { /* supress */ }
 
                     string targetPath = "/usr/local/escapepod/bin/cybervector-proxy";
-                    await this.UploadFile(sshConnection, targetFile, targetPath);
+                    await this.UploadFile(sshConnection, targetFile, targetPath).ConfigureAwait(false);
                 }
 
                 this.SetDeploymentStep("Starting up Cyb3rVector Extension...");
                 string startCommand = "chmod 755 /usr/local/escapepod/bin/cybervector-proxy.sh && /usr/local/escapepod/bin/cybervector-proxy.sh && rm -rf /usr/local/escapepod/bin/cybervector-proxy.sh";
-                await this.ShellExectue(sshConnection, startCommand);
+                await this.ShellExectue(sshConnection, startCommand).ConfigureAwait(false);
+            }
+            catch (Exception error)
+            {
+                throw new EscapePodConnectionFailed(error.Message);
+            }
+        }
+
+        public async Task RestartServices(string host, string user, string pass)
+        {
+            if (!string.IsNullOrEmpty(host)) this.Host = host;
+            if (string.IsNullOrEmpty(this.Host)) throw new ArgumentException("EscapePod host cannot be empty", host);
+
+            try
+            {
+                if (this.Client.IsConnected)
+                    await this.Client.Disconnect().ConfigureAwait(false);
+
+                this.SetDeploymentStep("Connecting to EscapePod...");
+                System.Reflection.Assembly assembly = typeof(EscapePodPlugin).Assembly;
+                ConnectionInfo sshConnection = new ConnectionInfo(host, user, new PasswordAuthenticationMethod(user, pass));
+                await this.ShellExectue(sshConnection, "").ConfigureAwait(false);
+
+                this.SetDeploymentStep("Restarting EscapePod Service...");
+                await this.ShellExectue(sshConnection, "sudo systemctl restart escape_pod");
+
+                this.SetDeploymentStep("Restarting Cyb3rVector Extension...");
+                await this.ShellExectue(sshConnection, "sudo systemctl restart cybervector-proxy");
             }
             catch (Exception error)
             {
@@ -171,6 +207,9 @@ namespace Cyb3rPod
                         this.PluginDeploying(this, new PluginDeploymentEventArgs(description));
 
                     ssh.Connect();
+
+                    if (string.IsNullOrEmpty(command)) return null;
+
                     SshCommand sshCommand = ssh.CreateCommand(command);
                     sshCommand.Execute();
                     if (sshCommand.ExitStatus != 0)
