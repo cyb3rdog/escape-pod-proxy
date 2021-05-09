@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.1.0</Version>
+    <Version>0.1.56</Version>
+    <AssemblyVersion>0.1.56.0</AssemblyVersion>
     <Authors>cyb3rdog</Authors>
     <Product>Cyb3rPod Extension for Cyb3rVector</Product>
     <Description>NET Extension for the Anki/DDL Vector EscapePod</Description>
@@ -19,7 +20,6 @@
     <PackageIcon>EscapePod.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    <AssemblyVersion>0.1.54.0</AssemblyVersion>
     <OutputType>Library</OutputType>
     <Company>PHACT</Company>
   </PropertyGroup>

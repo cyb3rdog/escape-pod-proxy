@@ -2,6 +2,7 @@
 using Cybervector;
 using Grpc.Core;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -257,23 +258,23 @@ namespace Cyb3rPod
             return new StatusMessage(response);
         }
 
-        public async Task<SelectIntentResponse> SelectIntents(string filter_json = "")
+        public async Task<List<EscapePodIntent>> SelectIntents(string filter_json = "{}")
         {
             SelectIntentResponse response = await this.RunMethod(client => client.SelectIntentsAsync(new SelectIntentRequest()
             {
                 FilterJson = filter_json
             })).ConfigureAwait(false);
             if (response.Response.Code == ResponseMessage.Types.ResponseCode.Failure)
-                new EscapePodCommandFailed(response.Response.Message);
-            return response;
+                throw new EscapePodCommandFailed(response.Response.Message);
+            return EscapePodIntent.FromResponse(response);
         }
 
         public async Task<string> InsertIntent(EscapePodIntent intent)
         {
             if (intent == null) throw new ArgumentNullException(nameof(intent), "Intent cannot be null!");
             InsertIntentResponse response = await this.InsertIntent(intent.ToJson()).ConfigureAwait(false);
-            intent.Oid = response.InsertedOid;
-            return intent.Oid;
+            intent.Id = response.InsertedOid;
+            return intent.Id;
         }
 
         public async Task<InsertIntentResponse> InsertIntent(string intentJson)
@@ -283,7 +284,7 @@ namespace Cyb3rPod
                 IntentData = intentJson
             })).ConfigureAwait(false);
             if (response.Response.Code == ResponseMessage.Types.ResponseCode.Failure)
-                new EscapePodCommandFailed(response.Response.Message);
+                throw new EscapePodCommandFailed(response.Response.Message);
             return response;
         }
 
@@ -294,7 +295,7 @@ namespace Cyb3rPod
                 IntentId = intentId
             })).ConfigureAwait(false);
             if (response.Response.Code == ResponseMessage.Types.ResponseCode.Failure)
-                new EscapePodCommandFailed(response.Response.Message);
+                throw new EscapePodCommandFailed(response.Response.Message);
             return response;
         }
 
