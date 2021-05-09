@@ -54,6 +54,7 @@ namespace Cyb3rPod
             foreach (string intentOid in this.Values)
                 try { await this.Plugin.Client.DeleteIntent(intentOid).ConfigureAwait(false); }
                 catch { /* suppress */ }
+            this.Clear();
         }
 
         public async Task<List<EscapePodIntent>> SelectIntents(string filter = "{}")
@@ -64,7 +65,6 @@ namespace Cyb3rPod
         public void Dispose()
         {
             _ = this.ClearIntents().ConfigureAwait(false);
-            this.Clear();
         }
     }
 }
