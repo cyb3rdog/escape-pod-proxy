@@ -84,7 +84,7 @@ ESCAPEPOD_EXTENDER_DISABLE_TLS=true
 2. Deploy the ```cybervector-proxy``` binary to your escape pod (i.e */usr/local/escapepod/bin/*)
 4. Create service, to run the service during EscapePod boot with all the enviroment varibles initialized ([example service here](https://github.com/cyb3rdog/escape-pod-proxy/blob/Cyb3rPod/Resources/cybervector-proxy.service))
 5. Restart the services / or your Escape-Pod
-6. Try the [Cyb3rPod client](https://github.com/cyb3rdog/escape-pod-proxy/tree/Cyb3rPod/Resources) or [Cyb3rVector](https://cyb3rdog.github.io/Cyb3rVector) application!
+6. Try out the [Cyb3rPod client](https://github.com/cyb3rdog/escape-pod-proxy/tree/Cyb3rPod/Resources), [Cyb3rVector](https://cyb3rdog.github.io/Cyb3rVector) CodeLab or [EscapePod Python SDK](https://github.com/cyb3rdog/escapepod_python_sdk)!
 
 
 ## Testing
