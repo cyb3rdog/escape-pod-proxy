@@ -7,11 +7,10 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.podextension.UnaryResp');
+goog.provide('proto.cybervector.DeleteIntentRequest');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
-goog.require('jspb.Map');
 goog.require('jspb.Message');
 
 
@@ -25,12 +24,12 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.podextension.UnaryResp = function(opt_data) {
+proto.cybervector.DeleteIntentRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.podextension.UnaryResp, jspb.Message);
+goog.inherits(proto.cybervector.DeleteIntentRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.podextension.UnaryResp.displayName = 'proto.podextension.UnaryResp';
+  proto.cybervector.DeleteIntentRequest.displayName = 'proto.cybervector.DeleteIntentRequest';
 }
 
 
@@ -45,8 +44,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.podextension.UnaryResp.prototype.toObject = function(opt_includeInstance) {
-  return proto.podextension.UnaryResp.toObject(opt_includeInstance, this);
+proto.cybervector.DeleteIntentRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.cybervector.DeleteIntentRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -55,14 +54,13 @@ proto.podextension.UnaryResp.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.podextension.UnaryResp} msg The msg instance to transform.
+ * @param {!proto.cybervector.DeleteIntentRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.podextension.UnaryResp.toObject = function(includeInstance, msg) {
+proto.cybervector.DeleteIntentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    intentName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, undefined) : []
+    intentId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -76,23 +74,23 @@ proto.podextension.UnaryResp.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.podextension.UnaryResp}
+ * @return {!proto.cybervector.DeleteIntentRequest}
  */
-proto.podextension.UnaryResp.deserializeBinary = function(bytes) {
+proto.cybervector.DeleteIntentRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.podextension.UnaryResp;
-  return proto.podextension.UnaryResp.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.cybervector.DeleteIntentRequest;
+  return proto.cybervector.DeleteIntentRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.podextension.UnaryResp} msg The message object to deserialize into.
+ * @param {!proto.cybervector.DeleteIntentRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.podextension.UnaryResp}
+ * @return {!proto.cybervector.DeleteIntentRequest}
  */
-proto.podextension.UnaryResp.deserializeBinaryFromReader = function(msg, reader) {
+proto.cybervector.DeleteIntentRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -101,13 +99,7 @@ proto.podextension.UnaryResp.deserializeBinaryFromReader = function(msg, reader)
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setIntentName(value);
-      break;
-    case 2:
-      var value = msg.getParametersMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
-         });
+      msg.setIntentId(value);
       break;
     default:
       reader.skipField();
@@ -122,9 +114,9 @@ proto.podextension.UnaryResp.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.podextension.UnaryResp.prototype.serializeBinary = function() {
+proto.cybervector.DeleteIntentRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.podextension.UnaryResp.serializeBinaryToWriter(this, writer);
+  proto.cybervector.DeleteIntentRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -132,56 +124,34 @@ proto.podextension.UnaryResp.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.podextension.UnaryResp} message
+ * @param {!proto.cybervector.DeleteIntentRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.podextension.UnaryResp.serializeBinaryToWriter = function(message, writer) {
+proto.cybervector.DeleteIntentRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIntentName();
+  f = message.getIntentId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getParametersMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
 };
 
 
 /**
- * optional string intent_name = 1;
+ * optional string intent_id = 1;
  * @return {string}
  */
-proto.podextension.UnaryResp.prototype.getIntentName = function() {
+proto.cybervector.DeleteIntentRequest.prototype.getIntentId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.podextension.UnaryResp.prototype.setIntentName = function(value) {
+proto.cybervector.DeleteIntentRequest.prototype.setIntentId = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * map<string, string> parameters = 2;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.podextension.UnaryResp.prototype.getParametersMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
-};
-
-
-proto.podextension.UnaryResp.prototype.clearParametersMap = function() {
-  this.getParametersMap().clear();
 };
 
 

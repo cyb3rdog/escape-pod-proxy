@@ -59,7 +59,7 @@ func (server *ProxyServer) Push(ctx context.Context, request *podextension.Unary
 func (server *ProxyServer) GetStatus(context context.Context, request *cybervector.StatusRequest) (*cybervector.StatusResponse, error) {
 
 	response := cybervector.StatusResponse{
-		Version:    "0.1.54",
+		Version:    "1.0.0",
 		Subscribed: int32(len(server.subscribers)),
 	}
 	return &response, nil

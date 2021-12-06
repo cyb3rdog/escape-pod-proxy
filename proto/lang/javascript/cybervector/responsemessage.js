@@ -7,11 +7,11 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.podextension.UnaryResp');
+goog.provide('proto.cybervector.ResponseMessage');
+goog.provide('proto.cybervector.ResponseMessage.ResponseCode');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
-goog.require('jspb.Map');
 goog.require('jspb.Message');
 
 
@@ -25,12 +25,12 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.podextension.UnaryResp = function(opt_data) {
+proto.cybervector.ResponseMessage = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.podextension.UnaryResp, jspb.Message);
+goog.inherits(proto.cybervector.ResponseMessage, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.podextension.UnaryResp.displayName = 'proto.podextension.UnaryResp';
+  proto.cybervector.ResponseMessage.displayName = 'proto.cybervector.ResponseMessage';
 }
 
 
@@ -45,8 +45,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.podextension.UnaryResp.prototype.toObject = function(opt_includeInstance) {
-  return proto.podextension.UnaryResp.toObject(opt_includeInstance, this);
+proto.cybervector.ResponseMessage.prototype.toObject = function(opt_includeInstance) {
+  return proto.cybervector.ResponseMessage.toObject(opt_includeInstance, this);
 };
 
 
@@ -55,14 +55,14 @@ proto.podextension.UnaryResp.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.podextension.UnaryResp} msg The msg instance to transform.
+ * @param {!proto.cybervector.ResponseMessage} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.podextension.UnaryResp.toObject = function(includeInstance, msg) {
+proto.cybervector.ResponseMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    intentName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, undefined) : []
+    code: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    message: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -76,23 +76,23 @@ proto.podextension.UnaryResp.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.podextension.UnaryResp}
+ * @return {!proto.cybervector.ResponseMessage}
  */
-proto.podextension.UnaryResp.deserializeBinary = function(bytes) {
+proto.cybervector.ResponseMessage.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.podextension.UnaryResp;
-  return proto.podextension.UnaryResp.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.cybervector.ResponseMessage;
+  return proto.cybervector.ResponseMessage.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.podextension.UnaryResp} msg The message object to deserialize into.
+ * @param {!proto.cybervector.ResponseMessage} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.podextension.UnaryResp}
+ * @return {!proto.cybervector.ResponseMessage}
  */
-proto.podextension.UnaryResp.deserializeBinaryFromReader = function(msg, reader) {
+proto.cybervector.ResponseMessage.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -100,14 +100,12 @@ proto.podextension.UnaryResp.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setIntentName(value);
+      var value = /** @type {!proto.cybervector.ResponseMessage.ResponseCode} */ (reader.readEnum());
+      msg.setCode(value);
       break;
     case 2:
-      var value = msg.getParametersMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
-         });
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMessage(value);
       break;
     default:
       reader.skipField();
@@ -122,9 +120,9 @@ proto.podextension.UnaryResp.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.podextension.UnaryResp.prototype.serializeBinary = function() {
+proto.cybervector.ResponseMessage.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.podextension.UnaryResp.serializeBinaryToWriter(this, writer);
+  proto.cybervector.ResponseMessage.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -132,56 +130,64 @@ proto.podextension.UnaryResp.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.podextension.UnaryResp} message
+ * @param {!proto.cybervector.ResponseMessage} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.podextension.UnaryResp.serializeBinaryToWriter = function(message, writer) {
+proto.cybervector.ResponseMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIntentName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getCode();
+  if (f !== 0.0) {
+    writer.writeEnum(
       1,
       f
     );
   }
-  f = message.getParametersMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  f = message.getMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
   }
 };
 
 
 /**
- * optional string intent_name = 1;
- * @return {string}
+ * @enum {number}
  */
-proto.podextension.UnaryResp.prototype.getIntentName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.cybervector.ResponseMessage.ResponseCode = {
+  SUCCESS: 0,
+  FAILURE: 1
+};
+
+/**
+ * optional ResponseCode code = 1;
+ * @return {!proto.cybervector.ResponseMessage.ResponseCode}
+ */
+proto.cybervector.ResponseMessage.prototype.getCode = function() {
+  return /** @type {!proto.cybervector.ResponseMessage.ResponseCode} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {string} value */
-proto.podextension.UnaryResp.prototype.setIntentName = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+/** @param {!proto.cybervector.ResponseMessage.ResponseCode} value */
+proto.cybervector.ResponseMessage.prototype.setCode = function(value) {
+  jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
 /**
- * map<string, string> parameters = 2;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
+ * optional string message = 2;
+ * @return {string}
  */
-proto.podextension.UnaryResp.prototype.getParametersMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
+proto.cybervector.ResponseMessage.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-proto.podextension.UnaryResp.prototype.clearParametersMap = function() {
-  this.getParametersMap().clear();
+/** @param {string} value */
+proto.cybervector.ResponseMessage.prototype.setMessage = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

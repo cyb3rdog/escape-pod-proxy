@@ -22,6 +22,7 @@ import (
 const (
 	certFile = "../../../certgen/Cyb3rVector-Extension.crt"
 	keyFile  = "../../../certgen/Cyb3rVector-Extension.pem"
+	version  = "1.0.0"
 )
 
 func setEnvVars() {
@@ -42,11 +43,51 @@ func setEnvVars() {
 
 }
 
+func getEnvVars() {
+
+	println("- Enviroment Variables:")
+	println("CYB3RVECTOR_PROXY_CLIENT_PORT=" + os.Getenv("CYB3RVECTOR_PROXY_CLIENT_PORT"))
+	println("CYB3RVECTOR_PROXY_CLIENT_CLIENT_AUTHENTICATION=" + os.Getenv("CYB3RVECTOR_PROXY_CLIENT_CLIENT_AUTHENTICATION"))
+	println("CYB3RVECTOR_PROXY_CLIENT_INSECURE=" + os.Getenv("CYB3RVECTOR_PROXY_CLIENT_INSECURE"))
+	println()
+	println("CYB3RVECTOR_PROXY_SERVER_PORT=" + os.Getenv("CYB3RVECTOR_PROXY_SERVER_PORT"))
+	println("CYB3RVECTOR_PROXY_SERVER_CLIENT_AUTHENTICATION=" + os.Getenv("CYB3RVECTOR_PROXY_SERVER_CLIENT_AUTHENTICATION"))
+	println("CYB3RVECTOR_PROXY_SERVER_INSECURE=" + os.Getenv("CYB3RVECTOR_PROXY_SERVER_INSECURE"))
+	println()
+	println("CYB3RVECTOR_MONGO_DB_NAME=" + os.Getenv("CYB3RVECTOR_MONGO_DB_NAME"))
+	println("CYB3RVECTOR_MONGO_DB_HOST=" + os.Getenv("CYB3RVECTOR_MONGO_DB_HOST"))
+	println("CYB3RVECTOR_MONGO_DB_PORT=" + os.Getenv("CYB3RVECTOR_MONGO_DB_PORT"))
+	println("CYB3RVECTOR_MONGO_DB_USER=" + os.Getenv("CYB3RVECTOR_MONGO_DB_USER"))
+	println("CYB3RVECTOR_MONGO_DB_PASS=" + os.Getenv("CYB3RVECTOR_MONGO_DB_PASS"))
+	println()
+}
+
+func printWin() {
+	println()
+	println(" --- ---------------------------------------------------------------------- ---")
+	println(" --- In order for this proxy to be able to connect to EscapePod's mongo DB, ---")
+	println(" --- MongoDB binding address needs to be changed in /etc/mongod.conf config ---")
+	println(" --- file from localhost '127.0.0.1' to public '0.0.0.0'                    ---")
+	println(" --- ---------------------------------------------------------------------- ---")
+	println(" --- In order for the EscapePod itself to be able to connect to this proxy, ---")
+	println(" --- and push its events here, it needs to know where this proxy is hosted. ---")
+	println(" --- Set following variables in /etc/escape-pod.conf file corresondingly:   ---")
+	println(" ---                                                                        ---")
+	println(" --- ENABLE_EXTENSIONS=true                                                 ---")
+	println(" --- ESCAPEPOD_EXTENDER_TARGET=XX.XX.XX.XX:8089                             ---")
+	println(" --- ESCAPEPOD_EXTENDER_DISABLE_TLS=true                                    ---")
+	println(" --- ---------------------------------------------------------------------- ---")
+	println()
+}
+
 func main() {
 	log.SetJSONFormat("2006-01-02 15:04:05")
 
-	// uncomment to hardcode the env vars
-	setEnvVars()
+	println("Cyb3rVector EscapePod Extension proxy v." + version)
+
+	//setEnvVars()  // uncomment to hardcode the env vars
+	getEnvVars()
+	//printWin()
 
 	mongoClient, err := mongoclient.New(
 		mongoclient.WithViper("env-prefix", "CYB3RVECTOR_MONGO_DB"),
